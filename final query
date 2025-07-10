@@ -1,0 +1,4 @@
+SELECT top 1 person_name FROM (SELECT person_name, sum(weight) over(order by turn) as runtotal
+FROM queue) as s
+WHERE runtotal <=1000
+ORDER BY runtotal DESC
